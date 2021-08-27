@@ -21,7 +21,7 @@ public class Signaling : MonoBehaviour
     {
         if (collider.TryGetComponent<Player>(out Player player))
         {
-            _reached.Invoke();
+            _reached?.Invoke();
         }
     }
 
@@ -34,8 +34,25 @@ public class Signaling : MonoBehaviour
     {
         if (collision.TryGetComponent<Player>(out Player player))
         {
-            _escaped.Invoke();
-            _myAudioSourse.volume = 0f;
+            _escaped?.Invoke();
         }
     }
+
+    public void VolumeDecreaseStart()
+    {
+        var volumeDecreaseJob = StartCoroutine(VolumeDecrease());
+    }
+
+    private IEnumerator VolumeDecrease()
+    {
+        var waitForOneSecond = new WaitForSeconds(0.01f);
+
+        while(_myAudioSourse.volume > 0f)
+        {
+            _myAudioSourse.volume = Mathf.MoveTowards(_myAudioSourse.volume, 0f, _recoveryRate);
+
+            yield return waitForOneSecond;
+        }
+    }
+
 }

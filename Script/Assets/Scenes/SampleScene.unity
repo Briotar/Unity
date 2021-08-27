@@ -382,9 +382,9 @@ MonoBehaviour:
   _escaped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 169000114}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Stop
+      - m_Target: {fileID: 169000117}
+        m_TargetAssemblyTypeName: Signaling, Assembly-CSharp
+        m_MethodName: VolumeDecreaseStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -471,7 +471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.02, y: 3.26, z: -10}
+  m_LocalPosition: {x: 1.02, y: 3.05, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -534,6 +534,7 @@ GameObject:
   - component: {fileID: 928094521}
   - component: {fileID: 928094520}
   - component: {fileID: 928094524}
+  - component: {fileID: 928094525}
   m_Layer: 0
   m_Name: Idle 0
   m_TagString: Untagged
@@ -647,7 +648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928094519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.23, y: -0.03, z: 0}
+  m_LocalPosition: {x: -5.78, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -665,6 +666,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28e8a1d9d4330048be5d3971987983c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &928094525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928094519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e899f3ccd7dddca4ca1a036f9b7fd152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
 --- !u!1 &1260926459
 GameObject:
   m_ObjectHideFlags: 0
