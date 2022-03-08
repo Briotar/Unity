@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9de01d3d8edf640b06ffccdac586e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 5132726460466908317, guid: 9e73ae9293d0f5841a0a77cfa30cefeb, type: 3}
+  _enemy: {fileID: 7436082850777987776, guid: 9e73ae9293d0f5841a0a77cfa30cefeb, type: 3}
   _spawnPoints: {fileID: 720608498}
 --- !u!20 &519420031
 Camera:
