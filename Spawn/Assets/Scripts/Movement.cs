@@ -1,18 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+[RequireComponent(typeof(Rigidbody2D))]
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float _jumpForce;
     private Rigidbody2D _thisBody;
-    private Animator _animator;
+
+    public UnityEvent PlayerWalkEvent;
+    public UnityEvent PlayerStayEvent;
 
     private void Start()
     {
         _thisBody = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -20,21 +25,21 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(_speed * Time.deltaTime, 0f, 0f);
-            _animator.SetFloat("Speed", 1);
+            PlayerWalkEvent?.Invoke();
         }
         else if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(_speed * Time.deltaTime * -1f, 0f, 0f);
-            _animator.SetFloat("Speed", 1);
+            PlayerWalkEvent?.Invoke();
         }
         else
         {
-            _animator.SetFloat("Speed", 0);
+            PlayerStayEvent?.Invoke();
         }
 
         if (Input.GetKey(KeyCode.Space))
         {
-            _thisBody.AddForce(Vector2.up * jumpForce);
+            _thisBody.AddForce(Vector2.up * _jumpForce * 2f);
         }
     }
 }

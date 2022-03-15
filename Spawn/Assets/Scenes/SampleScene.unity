@@ -200,6 +200,8 @@ GameObject:
   - component: {fileID: 374330329}
   - component: {fileID: 374330328}
   - component: {fileID: 374330330}
+  - component: {fileID: 374330332}
+  - component: {fileID: 374330331}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -253,7 +255,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &374330326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -344,7 +346,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  jumpForce: 2
+  _jumpForce: 2
+  PlayerWalkEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 374330332}
+        m_TargetAssemblyTypeName: PlayerAnimationController, Assembly-CSharp
+        m_MethodName: PlayerWalkController
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  PlayerStayEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 374330332}
+        m_TargetAssemblyTypeName: PlayerAnimationController, Assembly-CSharp
+        m_MethodName: PlayerStayController
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &374330330
 Animator:
   serializedVersion: 3
@@ -364,6 +396,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &374330331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374330323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba1097db37add54583a36bb09bc7036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &374330332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374330323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364041ada9d724a48b52cab01def5e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 374330330}
 --- !u!1 &453605152
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +1001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9de01d3d8edf640b06ffccdac586e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 5132726460466908317, guid: 9e73ae9293d0f5841a0a77cfa30cefeb, type: 3}
+  _enemy: {fileID: -6050907870517254874, guid: 9e73ae9293d0f5841a0a77cfa30cefeb, type: 3}
+  _spawnPoints: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1009,7 +1067,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c4b5e00d9f567a74d9a273ea750ef8b5, type: 3}
