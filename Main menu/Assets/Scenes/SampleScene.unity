@@ -324,18 +324,18 @@ PrefabInstance:
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 249987166}
+      objectReference: {fileID: 249987169}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButton
+      value: OnExitEvent
       objectReference: {fileID: 0}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UI.ExitButtonController, Assembly-CSharp
+      value: UI.ExitButtonView, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -379,6 +379,8 @@ GameObject:
   - component: {fileID: 249987165}
   - component: {fileID: 249987166}
   - component: {fileID: 249987167}
+  - component: {fileID: 249987168}
+  - component: {fileID: 249987169}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -433,6 +435,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _autorMenu: {fileID: 1461098501}
+  _mainMenu: {fileID: 249987164}
+--- !u!114 &249987168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249987164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20edddbfa35578344a62259168efbda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &249987169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249987164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b60aa8e5981f5542bd3882bf5f55795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,18 +649,18 @@ PrefabInstance:
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 249987167}
+      objectReference: {fileID: 249987168}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButton
+      value: OnAutorEvent
       objectReference: {fileID: 0}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UI.AutorButtonController, Assembly-CSharp
+      value: UI.AutorButtonView, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -869,18 +896,18 @@ PrefabInstance:
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1461098503}
+      objectReference: {fileID: 1461098504}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButton
+      value: OnBackToMenuEvnet
       objectReference: {fileID: 0}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UI.BackToMenuController, Assembly-CSharp
+      value: UI.BackToMenuView, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8911083862501812825, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -977,6 +1004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1461098502}
   - component: {fileID: 1461098503}
+  - component: {fileID: 1461098504}
   m_Layer: 5
   m_Name: AutorMenu
   m_TagString: Untagged
@@ -1018,6 +1046,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenu: {fileID: 249987164}
+--- !u!114 &1461098504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461098501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a67627784e47a4c8398d8fe72dee22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1486868144 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8911083862501812824, guid: de367e3c9d3ace84bb90a97f4c545fca, type: 3}

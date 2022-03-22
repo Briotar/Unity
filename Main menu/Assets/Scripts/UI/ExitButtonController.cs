@@ -1,16 +1,23 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEditor;
 
 namespace UI
 {
+    [RequireComponent(typeof(ExitButtonView))]
+
     public class ExitButtonController : MonoBehaviour
     {
-        public void OnButton()
-        {
+        private ExitButtonView _exit;
 
-            EditorApplication.isPlaying = false;
-            //Application.Quit();
+        private void Start()
+        {
+            _exit = GetComponent<ExitButtonView>();
+
+            _exit.ExitEvent += () =>
+            {
+                EditorApplication.isPlaying = false;
+                //Application.Quit();
+            };
         }
     }
 }
