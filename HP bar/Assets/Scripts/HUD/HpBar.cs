@@ -4,21 +4,14 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    [RequireComponent(typeof(HpBarMover))]
     public class HpBar : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
         [SerializeField] private Player _player;
-
-        private HpBarMover _coroutine;
-
-        private float _speed = 1f;
-        private float _targetHP;
+        [SerializeField] private float _speed = 50f;
 
         private void OnEnable()
         {
-            _coroutine = GetComponent<HpBarMover>();
-
             _player.HealthChanged.AddListener(OnHealthChanged);
         }
 
@@ -27,12 +20,19 @@ namespace UI
             _player.HealthChanged.RemoveListener(OnHealthChanged);
         }
 
-        private void OnHealthChanged(int value)
+        private void OnHealthChanged(float targetHp)
         {
-            float currentValue = value / 100f;
+            StartCoroutine(MovingHPBar(_slider, targetHp, _speed));
+        }
 
-            _targetHP = _slider.normalizedValue + currentValue;
-            _coroutine.StartHpBarMover(_slider, _targetHP, _speed);
+        private IEnumerator MovingHPBar(Slider slider, float targetHP, float speed)
+        {
+            while (slider.value != targetHP)
+            {
+                slider.value = Mathf.MoveTowards(slider.value, targetHP, speed * Time.deltaTime);
+
+                yield return null;
+            }
         }
     }
 }

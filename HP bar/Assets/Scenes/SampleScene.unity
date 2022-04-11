@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4523d3b1df524489bce220f8e713e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _maxHealth: 30
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -325,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 1094905546}
   _player: {fileID: 181405536}
+  _speed: 10
 --- !u!114 &335364430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,7 +746,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 181405536}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnHealthChanged
+        m_MethodName: OnButtonClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -877,9 +878,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 369282227}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0.297
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -968,7 +969,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 181405536}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnHealthChanged
+        m_MethodName: OnButtonClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
