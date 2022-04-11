@@ -219,7 +219,6 @@ GameObject:
   - component: {fileID: 335364425}
   - component: {fileID: 335364424}
   - component: {fileID: 335364428}
-  - component: {fileID: 335364430}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -326,18 +325,6 @@ MonoBehaviour:
   _slider: {fileID: 1094905546}
   _player: {fileID: 181405536}
   _speed: 10
---- !u!114 &335364430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335364423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b69f73a7d1c262c458b38a0341cb9115, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &369282226
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +733,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 181405536}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_MethodName: OnHealthChanged
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -969,7 +956,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 181405536}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_MethodName: OnHealthChanged
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

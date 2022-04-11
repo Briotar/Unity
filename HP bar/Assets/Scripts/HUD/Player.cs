@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private float _maxSliderValue;
     private float _minSliderValue;
 
-    public UnityEvent<float> HealthChanged;
+    public event UnityAction<float> HealthChanged;
 
     private void Start()
     {
@@ -22,20 +22,10 @@ public class Player : MonoBehaviour
         HealthChanged?.Invoke(_currentHealth);
     }
 
-    public void OnButtonClick(int value)
+    public void OnHealthChanged(int value)
     {
-        if ((_currentHealth + value) < _minSliderValue)
-            _currentHealth = _minSliderValue;
-        else if ((_currentHealth + value) > _maxSliderValue)
-            _currentHealth = _maxSliderValue;
-        else
-            _currentHealth += value;
+        _currentHealth = Mathf.Clamp(_currentHealth + value, _minSliderValue, _maxSliderValue);
 
-        OnHealthChanged();
-    }
-
-    private void OnHealthChanged()
-    {
         HealthChanged?.Invoke(_currentHealth);
     }
 }
