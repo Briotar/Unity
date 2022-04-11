@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class HpBarCoroutine : MonoBehaviour
+    public class HpBarMover : MonoBehaviour
     {
-        public void StartHpBarCoroutine(Slider slider, float targetHP, float speed)
+        public void StartHpBarMover(Slider slider, float targetHP, float speed)
         {
             StartCoroutine(MovingHPBar(slider, targetHP, speed)); ;
         }

@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &181405535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181405537}
+  - component: {fileID: 181405536}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &181405536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181405535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4523d3b1df524489bce220f8e713e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &181405537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181405535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.30079734, y: 0.22777635, z: -9.693274}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295835646
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +219,7 @@ GameObject:
   - component: {fileID: 335364425}
   - component: {fileID: 335364424}
   - component: {fileID: 335364428}
-  - component: {fileID: 335364429}
+  - component: {fileID: 335364430}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -277,7 +324,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 1094905546}
---- !u!114 &335364429
+  _player: {fileID: 181405536}
+--- !u!114 &335364430
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,7 +334,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 335364423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7769d51f1b7d4a82e7874d06dd026, type: 3}
+  m_Script: {fileID: 11500000, guid: b69f73a7d1c262c458b38a0341cb9115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &369282226
@@ -695,14 +743,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335364429}
-        m_TargetAssemblyTypeName: UI.ChangeHPView, Assembly-CSharp
-        m_MethodName: OnDecreaseEvent
-        m_Mode: 1
+      - m_Target: {fileID: 181405536}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnHealthChanged
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: -10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -918,14 +966,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335364429}
-        m_TargetAssemblyTypeName: UI.ChangeHPView, Assembly-CSharp
-        m_MethodName: OnIncreaseEvent
-        m_Mode: 1
+      - m_Target: {fileID: 181405536}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnHealthChanged
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
